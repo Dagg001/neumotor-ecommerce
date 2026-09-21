@@ -1,0 +1,59 @@
+# Laboratorio de Aplicaciones Web Cliente - Proyecto E-commerce: Neumotor
+
+Aplicación web interactiva para la comercialización de neumáticos, desarrollada bajo estándares modernos de maquetación semántica, diseño responsive y manipulación dinámica del DOM con JavaScript.
+
+---
+
+##  Integrantes y Participación
+
+| Nombre Completo | Usuario de GitHub | Rol / Aportes Principales |
+| :--- | :--- | :--- |
+| **Diego Alejandro Garcia Gonzalez** | [@Dagg001](https://github.com/Dagg001) | Estructuración HTML5 semántico, maquetación CSS/Bootstrap, lógica de renderizado dinámico de tarjetas, sistema de filtrado y ordenamiento en JavaScript. |
+
+---
+
+##  Descripción del Proyecto
+
+El proyecto consiste en una tienda en línea enfocada en la venta de neumáticos para distintas categorías de vehículos (Autos, SUV, Camionetas, Deportivos y Utilitarios). Cumple con los requisitos establecidos en las consignas de la cátedra:
+
+1. **Diseño Responsive & UX:** 
+   - Maquetación adaptativa mediante Bootstrap 5 y CSS3, permitiendo una experiencia fluida tanto en dispositivos móviles (smartphones y tablets) como en pantallas de escritorio.
+   - Navegación secundaria fija (*sticky navbar*) para agilizar la interacción y exploración de categorías.
+
+2. **Políticas de Accesibilidad y Semántica:**
+   - Empleo riguroso de etiquetas semánticas de HTML5 (`<header>`, `<nav>`, `<main>`, `<aside>`, `<section>`, `<article>`, `<footer>`).
+   - Uso de textos descriptivos en enlaces, atributos `aria-*` y etiquetas `alt` en imágenes.
+
+3. **Lógica de Negocio y Funcionalidades (Fase Inicial):**
+   - **Renderizado Dinámico:** Generación de tarjetas (*cards*) con información detallada de cada cubierta (modelo, medidas, precios, descuentos y planes de cuotas).
+   - **Buscador en Tiempo Real:** Filtrado simultáneo por texto (modelo, marca o medida).
+   - **Filtros Combinados:** Selección cruzada por categorías de vehículos y rodados (R13 a R18).
+   - **Ordenamiento:** Reordenamiento dinámico por menor/mayor precio y alfabéticamente (A-Z).
+   - **Ficha de Detalle:** Navegación hacia `articulo.html` con carga contextual del producto seleccionado vía parámetros en URL (`?id=...`).
+
+---
+
+## Tecnologías Utilizadas
+
+- **HTML5:** Marcado semántico y estructura accesible.
+- **CSS3 / Bootstrap 5:** Estilos personalizados, diseño responsive y componentes UI.
+- **Bootstrap Icons:** Iconografía vectorial.
+- **JavaScript (ES6+):** Manipulación dinámica del DOM, gestión de eventos y modularización.
+
+---
+
+##  Estructura del Directorio
+
+```text
+PROYECTO NEUMOTOR/
+│
+├── css/
+│   └── Style.css           # Estilos generales y reglas responsivas
+├── Img local/              # Recursos gráficos locales y catálogo
+│   ├── logo.png            # Identidad visual de Neumotor
+│   ├── 1.png ... 12.png    # Imágenes de neumáticos sin fondo
+├── Index.html              # Página principal con catálogo y filtros
+├── articulo.html           # Vista individual de detalle de producto
+├── app.js                  # Lógica de renderizado, búsqueda y filtros
+├── env.js                  # Variables de entorno y configuración
+└── README.md               # Documentación del proyecto
