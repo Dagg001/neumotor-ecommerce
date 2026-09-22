@@ -50,7 +50,7 @@ Descripción de participación y desarrollo:
 
 DATOS FICTICIOS PARA PRUEBAS DE FACTURACIÓN
 --------------------------------------------------------------------
-Para probar el flujo de compra en la página de facturación, puedes utilizar los siguientes datos de prueba para sortear las validaciones del formulario:
+Para probar el flujo de compra en la página de facturación, puede utilizar los siguientes datos de prueba para sortear las validaciones del formulario:
 
 - Nombre y Apellido: Juan Pérez
 - DNI o CUIT: 20123456789
