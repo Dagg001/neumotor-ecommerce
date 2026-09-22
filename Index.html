@@ -13,28 +13,28 @@
     <p class="m-0"><i class="bi bi-truck"></i> ENVÍOS GRATIS A TODO EL PAÍS &bull; 6 CUOTAS SIN INTERÉS</p>
   </aside>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark-main py-0">
-      <div class="container-fluid px-lg-4">
-        <a class="navbar-brand d-flex align-items-center" href="Index.html">
-          <img src="Img local/logo.png" alt="Neumotor Logo" class="brand-logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Abrir navegación">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark-main py-0 position-relative">
+      <div class="container-fluid px-lg-4 d-flex flex-wrap align-items-center">
+        <button class="navbar-toggler border-0 px-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" style="z-index: 11;">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navContent">
-          <div class="search-box-container mx-auto my-2 my-lg-0 d-flex align-items-center">
-            <div class="input-group input-group-sm">
-              <input type="text" id="filtro-input" class="form-control" placeholder="Buscar por modelo, marca o medida (ej: 205/55 R16)..." aria-label="Buscador de neumáticos">
+        <a class="navbar-brand d-flex align-items-center m-0 me-lg-4" href="Index.html">
+          <img src="Img local/logo.png" alt="Neumotor Logo" class="brand-logo">
+        </a>
+        <div class="nav-icons d-flex align-items-center gap-3 ms-auto order-lg-last" style="z-index: 11;">
+          <span class="text-dark d-none d-md-inline"><i class="bi bi-person fs-5"></i></span>
+          <div class="cart-wrapper position-relative" data-bs-toggle="offcanvas" data-bs-target="#carritoOffcanvas">
+            <i class="bi bi-cart3 fs-5 text-dark"></i>
+            <span class="badge rounded-pill bg-danger cart-badge">0</span>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse w-100 w-lg-auto mt-3 mt-lg-0 order-lg-2" id="navContent">
+          <div class="search-box-container mx-auto d-flex align-items-center px-2 px-lg-0 w-100">
+            <div class="input-group input-group-sm w-100">
+              <input type="text" id="filtro-input" class="form-control" placeholder="Buscar por modelo, marca o medida (ej: 205/55 R16)...">
               <button class="btn btn-action-red" type="button" id="btn-buscar">
                 <i class="bi bi-search"></i> BUSCAR
               </button>
-            </div>
-          </div>
-          <div class="nav-icons d-flex align-items-center gap-3 ms-auto">
-            <span class="text-dark d-none d-md-inline"><i class="bi bi-person fs-5"></i></span>
-            <div class="cart-wrapper position-relative" data-bs-toggle="offcanvas" data-bs-target="#carritoOffcanvas">
-              <i class="bi bi-cart3 fs-5 text-dark"></i>
-              <span class="badge rounded-pill bg-danger cart-badge">0</span>
             </div>
           </div>
         </div>
@@ -114,14 +114,13 @@
         </div>
       </aside>
       <section class="col-lg-9 col-md-8">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3" id="lista-articulos">
-        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3" id="lista-articulos"></div>
       </section>
     </div>
   </main>
   <footer class="footer text-white py-4 mt-5" style="background-color: #111;">
     <div class="container text-center">
-      <img src="Img local/logo.png" alt="Neumotor Logo" class="brand-logo mb-3" style="filter: brightness(0) invert(1); margin: 0 auto; height: 50px; object-position: center;">
+      <img src="Img local/logo.png" alt="Neumotor Logo" class="brand-logo mb-3" style="filter: brightness(0) invert(1); margin: 0 auto; height: 50px; object-position: center; position: static; transform: none;">
       <p class="m-0 small text-white-50">&copy; 2026 Neumotor - Especialistas en Neumáticos. Todos los derechos reservados.</p>
     </div>
   </footer>
