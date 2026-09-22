@@ -1,39 +1,51 @@
-```text
-LABORATORIO DE APLICACIONES WEB CLIENTE
-Proyecto E-commerce: Neumotor
-====================================================================
+NEUMOTOR - E-COMMERCE DE NEUMÁTICOS
 
-Aplicación web interactiva para la comercialización de neumáticos, desarrollada bajo estándares modernos de maquetación semántica, diseño responsive y manipulación dinámica del DOM con JavaScript.
+Proyecto final para el Laboratorio de Aplicaciones Web Cliente. 
+Neumotor es una Single Page Application (SPA) responsiva que simula una tienda en línea completa para la venta de neumáticos, cumpliendo con todos los requisitos de lógica de negocio, UX/UI, accesibilidad y consumo de datos mediante Fetch.
 
+---------------------------------------------------------
+TECNOLOGÍAS UTILIZADAS
+---------------------------------------------------------
+- HTML5: Estructurado mediante etiquetas semánticas (<header>, <nav>, <main>, <aside>, <section>, <footer>) para garantizar accesibilidad.
+- CSS3 & Bootstrap 5.3: Diseño 100% responsivo (Mobile First), grillas adaptables y componentes interactivos (Navbar colapsable, Offcanvas para el carrito, Modales).
+- JavaScript (ES6+): Manipulación dinámica del DOM, asincronía (async/await) y eventos.
+- Local Storage: Persistencia de datos tanto para el inventario (simulación de base de datos) como para el carrito de compras.
+- Fetch API: Consumo de datos desde un archivo local (productos.json) simulando la carga de un endpoint externo.
+- SweetAlert2: Mejora de la experiencia de usuario (UX) mediante alertas estilizadas y no intrusivas.
 
-INTEGRANTES Y PARTICIPACIÓN
---------------------------------------------------------------------
-Estudiante: Diego Alejandro Garcia Gonzalez
-Usuario de GitHub: Dagg001
-Rol / Aportes Principales: Estructuración HTML5 semántico, maquetación CSS/Bootstrap, lógica de renderizado dinámico de tarjetas, sistema de filtrado y ordenamiento en JavaScript. Implementación de carrito de compras, gestión de inventario en Local Storage y flujo de facturación.
+---------------------------------------------------------
+FUNCIONALIDADES PRINCIPALES (LÓGICA DE NEGOCIO)
+---------------------------------------------------------
+1. Catálogo Dinámico: Renderizado automático de productos consumidos mediante fetch.
+2. Modal de Detalle: Vista rápida del producto con su información completa (precio, cuotas, descuento, descripción y stock disponible) sin recargar la página.
+3. Buscador y Filtros Combinados: 
+   * Barra de búsqueda en tiempo real (por título, categoría o medida).
+   * Filtrado por categoría (Auto, SUV, Camioneta, etc.).
+   * Filtrado múltiple por Rodado (Checkbox).
+   * Ordenamiento dinámico (Precio ascendente/descendente y alfabético).
+4. Carrito de Compras (Sidebar / Offcanvas):
+   * Visualización del total de productos en una burbuja (Badge) en la navegación.
+   * Modificación de cantidades (botones + y - con deshabilitación dinámica al llegar a 1).
+   * Eliminación individual o vaciado completo del carrito.
+   * Actualización instantánea del subtotal y el precio final.
+5. Control de Stock Estricto: Validación cruzada con el inventario almacenado en Local Storage para impedir que se agreguen más unidades de las disponibles.
+6. Flujo de Checkout (Extra): 
+   * Vista de facturacion.html para la carga de datos del cliente y método de pago ficticio.
+   * Verificación final de stock antes de confirmar la compra.
+   * Redirección a compra_lista.html con mensaje de éxito, limpieza de carrito y descuento real del inventario.
 
+---------------------------------------------------------
+DESARROLLO E INTEGRANTES
+---------------------------------------------------------
+Alumno: Diego Alejandro Garcia Gonzalez
+GitHub: Dagg01 (https://github.com/Dagg01)
 
-DESCRIPCIÓN DEL PROYECTO
---------------------------------------------------------------------
-El proyecto consiste en una tienda en línea enfocada en la venta de neumáticos para distintas categorías de vehículos (Autos, SUV, Camionetas, Deportivos y Utilitarios). Cumple con los requisitos establecidos en las consignas de la cátedra:
-
-1. Diseño Responsive & UX: 
-   - Maquetación adaptativa mediante Bootstrap 5 y CSS3, permitiendo una experiencia fluida tanto en dispositivos móviles (smartphones y tablets) como en pantallas de escritorio.
-   - Navegación secundaria fija (sticky navbar) para agilizar la interacción y exploración de categorías.
-
-2. Políticas de Accesibilidad y Semántica:
-   - Empleo riguroso de etiquetas semánticas de HTML5 (<header>, <nav>, <main>, <aside>, <section>, <article>, <footer>).
-   - Uso de textos descriptivos en enlaces, atributos "aria" y etiquetas "alt" en imágenes.
-
-3. Lógica de Negocio y Funcionalidades:
-   - Renderizado Dinámico: Generación de tarjetas (cards) con información detallada de cada cubierta (modelo, medidas, precios, descuentos y planes de cuotas).
-   - Buscador en Tiempo Real: Filtrado simultáneo por texto (modelo, marca o medida).
-   - Filtros Combinados: Selección cruzada por categorías de vehículos y rodados (R13 a R18).
-   - Ordenamiento: Reordenamiento dinámico por menor/mayor precio y alfabéticamente (A-Z).
-   - Ficha de Detalle: Navegación hacia articulo.html con carga contextual del producto seleccionado vía parámetros en URL (?id=...).
-   - Carrito de Compras: Panel lateral (Offcanvas) funcional que permite agregar productos, modificar cantidades y eliminar ítems. Cuenta con validación de stock máximo disponible.
-   - Gestión de Inventario: Almacenamiento persistente del catálogo en Local Storage. Cada producto inicia con un stock base de 10 unidades que se descuenta al confirmar una compra.
-   - Flujo de Checkout: Página de facturación que lista el resumen del pedido y valida los datos del cliente, derivando a una vista de éxito y vaciando el carrito tras la confirmación.
+Descripción de participación y desarrollo:
+- Implementación de la maquetación accesible e integración con Bootstrap 5.
+- Desarrollo del diseño responsivo con CSS personalizado para adaptar la interfaz (barras de búsqueda y logotipos) a múltiples dispositivos.
+- Creación de la lógica completa en JavaScript: consumo JSON con fetch, motor de filtros múltiples, y renderizado del catálogo.
+- Construcción del carrito de compras y su vínculo persistente con localStorage.
+- Diseño del flujo final de compra (facturación) y validaciones de inventario mediante notificaciones de SweetAlert2.
 
 
 DATOS FICTICIOS PARA PRUEBAS DE FACTURACIÓN
@@ -48,39 +60,11 @@ Para probar el flujo de compra en la página de facturación, puedes utilizar lo
 - Vencimiento: Seleccionar cualquier fecha futura (ej. Diciembre 2028)
 - CVV: 123 (o cualquier código de 3 a 4 dígitos)
 
-
-TECNOLOGÍAS UTILIZADAS
---------------------------------------------------------------------
-- HTML5: Marcado semántico y estructura accesible.
-- CSS3 / Bootstrap 5: Estilos personalizados, diseño responsive y componentes UI.
-- Bootstrap Icons: Iconografía vectorial.
-- JavaScript (ES6+): Manipulación dinámica del DOM, Local Storage, gestión de eventos y modularización.
-
-
-ESTRUCTURA DEL DIRECTORIO
---------------------------------------------------------------------
-PROYECTO NEUMOTOR/
-|-- css/
-|   |-- Style.css           (Estilos generales y reglas responsivas)
-|-- Img local/              (Recursos gráficos locales y catálogo)
-|   |-- logo.png            (Identidad visual de Neumotor)
-|   |-- 1.png ... 12.png    (Imágenes de neumáticos sin fondo)
-|-- Index.html              (Página principal con catálogo y filtros)
-|-- articulo.html           (Vista individual de detalle de producto)
-|-- facturacion.html        (Formulario de checkout y resumen de compra)
-|-- compra_lista.html       (Pantalla de confirmación de compra exitosa)
-|-- app.js                  (Lógica de renderizado, carrito, inventario y filtros)
-|-- README.txt              (Documentación del proyecto)
-
-
-INSTRUCCIONES DE EJECUCIÓN
---------------------------------------------------------------------
-1. Clonar el repositorio:
-   git clone https://github.com/Dagg001/neumotor-ecommerce.git
-
-2. Acceder al directorio:
-   cd neumotor-ecommerce
-
-3. Abrir el archivo Index.html en cualquier navegador web moderno (o mediante la extensión Live Server en Visual Studio Code).
-
 ```
+
+---------------------------------------------------------
+INSTRUCCIONES PARA PROBAR EL PROYECTO
+---------------------------------------------------------
+1. Clonar el repositorio.
+2. Es indispensable abrir el proyecto utilizando un servidor local (como la extensión Live Server en VS Code o en GitHub Codespaces) para que la función fetch() pueda consumir correctamente el archivo productos.json.
+3. Navegar interactuando con los filtros, el modal y añadiendo productos al carrito para visualizar el flujo completo hasta el checkout.
