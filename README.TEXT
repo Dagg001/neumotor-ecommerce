@@ -1,3 +1,4 @@
+```text
 LABORATORIO DE APLICACIONES WEB CLIENTE
 Proyecto E-commerce: Neumotor
 ====================================================================
@@ -9,7 +10,7 @@ INTEGRANTES Y PARTICIPACIÓN
 --------------------------------------------------------------------
 Estudiante: Diego Alejandro Garcia Gonzalez
 Usuario de GitHub: Dagg001
-Rol / Aportes Principales: Estructuración HTML5 semántico, maquetación CSS/Bootstrap, lógica de renderizado dinámico de tarjetas, sistema de filtrado y ordenamiento en JavaScript.
+Rol / Aportes Principales: Estructuración HTML5 semántico, maquetación CSS/Bootstrap, lógica de renderizado dinámico de tarjetas, sistema de filtrado y ordenamiento en JavaScript. Implementación de carrito de compras, gestión de inventario en Local Storage y flujo de facturación.
 
 
 DESCRIPCIÓN DEL PROYECTO
@@ -24,12 +25,28 @@ El proyecto consiste en una tienda en línea enfocada en la venta de neumáticos
    - Empleo riguroso de etiquetas semánticas de HTML5 (<header>, <nav>, <main>, <aside>, <section>, <article>, <footer>).
    - Uso de textos descriptivos en enlaces, atributos "aria" y etiquetas "alt" en imágenes.
 
-3. Lógica de Negocio y Funcionalidades (Fase Inicial):
+3. Lógica de Negocio y Funcionalidades:
    - Renderizado Dinámico: Generación de tarjetas (cards) con información detallada de cada cubierta (modelo, medidas, precios, descuentos y planes de cuotas).
    - Buscador en Tiempo Real: Filtrado simultáneo por texto (modelo, marca o medida).
    - Filtros Combinados: Selección cruzada por categorías de vehículos y rodados (R13 a R18).
    - Ordenamiento: Reordenamiento dinámico por menor/mayor precio y alfabéticamente (A-Z).
    - Ficha de Detalle: Navegación hacia articulo.html con carga contextual del producto seleccionado vía parámetros en URL (?id=...).
+   - Carrito de Compras: Panel lateral (Offcanvas) funcional que permite agregar productos, modificar cantidades y eliminar ítems. Cuenta con validación de stock máximo disponible.
+   - Gestión de Inventario: Almacenamiento persistente del catálogo en Local Storage. Cada producto inicia con un stock base de 10 unidades que se descuenta al confirmar una compra.
+   - Flujo de Checkout: Página de facturación que lista el resumen del pedido y valida los datos del cliente, derivando a una vista de éxito y vaciando el carrito tras la confirmación.
+
+
+DATOS FICTICIOS PARA PRUEBAS DE FACTURACIÓN
+--------------------------------------------------------------------
+Para probar el flujo de compra en la página de facturación, puedes utilizar los siguientes datos de prueba para sortear las validaciones del formulario:
+
+- Nombre y Apellido: Juan Pérez
+- DNI o CUIT: 20123456789
+- Correo Electrónico: juan.perez@ejemplo.com
+- Dirección de Envío: Av. Rivadavia 1234, CABA
+- Número de Tarjeta Ficticia: 1234567812345678 (16 dígitos)
+- Vencimiento: Seleccionar cualquier fecha futura (ej. Diciembre 2028)
+- CVV: 123 (o cualquier código de 3 a 4 dígitos)
 
 
 TECNOLOGÍAS UTILIZADAS
@@ -37,7 +54,7 @@ TECNOLOGÍAS UTILIZADAS
 - HTML5: Marcado semántico y estructura accesible.
 - CSS3 / Bootstrap 5: Estilos personalizados, diseño responsive y componentes UI.
 - Bootstrap Icons: Iconografía vectorial.
-- JavaScript (ES6+): Manipulación dinámica del DOM, gestión de eventos y modularización.
+- JavaScript (ES6+): Manipulación dinámica del DOM, Local Storage, gestión de eventos y modularización.
 
 
 ESTRUCTURA DEL DIRECTORIO
@@ -50,8 +67,9 @@ PROYECTO NEUMOTOR/
 |   |-- 1.png ... 12.png    (Imágenes de neumáticos sin fondo)
 |-- Index.html              (Página principal con catálogo y filtros)
 |-- articulo.html           (Vista individual de detalle de producto)
-|-- app.js                  (Lógica de renderizado, búsqueda y filtros)
-|-- env.js                  (Variables de entorno y configuración)
+|-- facturacion.html        (Formulario de checkout y resumen de compra)
+|-- compra_lista.html       (Pantalla de confirmación de compra exitosa)
+|-- app.js                  (Lógica de renderizado, carrito, inventario y filtros)
 |-- README.txt              (Documentación del proyecto)
 
 
@@ -64,3 +82,5 @@ INSTRUCCIONES DE EJECUCIÓN
    cd neumotor-ecommerce
 
 3. Abrir el archivo Index.html en cualquier navegador web moderno (o mediante la extensión Live Server en Visual Studio Code).
+
+```
